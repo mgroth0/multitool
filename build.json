@@ -1,0 +1,36 @@
+{
+    "type": "BasicJvmOnlyMod",
+    "jvm": {
+        "exec": {
+            "type": "Typical"
+        },
+        "compose": true
+    },
+    "dependencies": [
+        {
+            "type": "Projects",
+            "cfg": "implementation",
+            "paths": [
+                ":k:compose:app",
+                ":k:redis",
+                ":k:priv",
+                ":k:mbuild:lredis"
+            ]
+        },
+        {
+            "type": "Project",
+            "cfg": "runtimeOnly",
+            "path": ":k:log:fourj"
+        },
+        {
+            "type": "Projects",
+            "cfg": "testImplementation",
+            "paths": [
+                ":k:mbuild:mtest:compose"
+            ]
+        }
+    ],
+    "kotlin": {
+        "serialization": true
+    }
+}
